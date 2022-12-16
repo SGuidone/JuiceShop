@@ -26,9 +26,9 @@ steps:
 - task: FortifyScanCentralSAST@7
   inputs:
     scanCentralCtrlUrl: 'https://fortify.cyberxdemo.com:10443/scancentral-ctrl/'
-    scanCentralClientToken: 'ad6098e1-0b2f-469a-90ce-71af47dd43b6'
+    scanCentralClientToken: 'CHANGEME321!'
     sscUrl: 'https://fortify.cyberxdemo.com:8443/ssc/'
-    sscCiToken: 'CHANGEME321!'
+    sscCiToken: 'ad6098e1-0b2f-469a-90ce-71af47dd43b6'
     uploadToSSC: true
     applicationName: 'JuiceShop'
     applicationVersion: 'SAST'
