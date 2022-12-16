@@ -22,7 +22,7 @@ steps:
     script: |
       echo Add IP to agent host file
                   
-            echo 3.85.112.204 fortify.cyberxdemo.com >> %WINDIR%\System32\Drivers\Etc\Hosts
+            echo 54.175.160.224 fortify.cyberxdemo.com >> %WINDIR%\System32\Drivers\Etc\Hosts
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
