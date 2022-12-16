@@ -1,0 +1,34 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: windows-2019
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Add IP to agent host file
+                  
+            echo 3.85.112.204 fortify.cyberxdemo.com >> %WINDIR%\System32\Drivers\Etc\Hosts
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: FortifyScanCentralSAST@7
+  inputs:
+    scanCentralCtrlUrl: 'https://fortify.cyberxdemo.com:10443/scancentral-ctrl/'
+    scanCentralClientToken: 'ad6098e1-0b2f-469a-90ce-71af47dd43b6'
+    sscUrl: 'https://fortify.cyberxdemo.com:8443/ssc/'
+    sscCiToken: '$(ScanCentral.SscCiToken)'
+    uploadToSSC: true
+    applicationName: 'JuiceShop'
+    applicationVersion: 'SAST'
