@@ -32,3 +32,4 @@ steps:
     uploadToSSC: true
     applicationName: 'JuiceShop'
     applicationVersion: 'SAST'
+    buildTool: 'none'
