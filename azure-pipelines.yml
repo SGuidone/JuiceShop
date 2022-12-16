@@ -12,6 +12,14 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      java -version
+        env:
+          JAVA_HOME: $(JAVA_HOME_11_X64)
+          PATH: $(JAVA_HOME_11_X64)/bin;$(PATH)
 - task: CmdLine@2
   inputs:
     script: |
